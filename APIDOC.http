@@ -1,0 +1,85 @@
+# api call for category list
+
+###
+GET  http://127.0.0.1:8000/api/category/
+
+# api call for adding category
+###
+POST http://127.0.0.1:8000/api/category/
+Content-Type: application/json
+
+{
+    "name":"fruits"
+}
+
+
+# ======product manage=====
+
+#api call for adding a new product
+
+###
+
+POST http://127.0.0.1:8000/api/category/1/products/
+Content-Type: application/json
+
+{
+    "title":"apple",
+    "description":"apple description",
+    "price":120
+
+}
+
+# api call listing all products
+
+###
+
+POST http://127.0.0.1:8000/api/products/
+Content-Type: application/json
+
+{
+    "title":"apple",
+    "description":"apple description",
+    "price":75
+
+}
+
+# specific product detail
+###
+GET http://127.0.0.1:8000/api/products?category=vegitable
+# ? optional query parameter
+
+
+# Api Call for creating a order
+
+###
+POST http://127.0.0.1:8000/api/orders/
+Content-Type: application/json
+
+{
+    "phone":"9539409323"
+}
+
+
+# Api call for order item
+
+###
+
+POST http://127.0.0.1:8000/api/orders/1/items/
+Content-Type: application/json
+
+{
+    "product_object": 3,
+    "qty":1.5
+}
+
+# api call for order detail
+
+###
+GET http://127.0.0.1:8000/api/orders/1/
+
+
+#api call for generating bill
+
+###
+
+PUT http://127.0.0.1:8000/api/orders/1/generate-bill/
